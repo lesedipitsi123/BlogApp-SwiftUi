@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct ContentView: View {
+struct BlogContentView: View {
     var body: some View {
-        BlogView()
+        AuthorView()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        BlogContentView()
     }
 }

@@ -3,24 +3,26 @@ import SwiftUI
 struct BlogView : View {
     var body: some View {
         NavigationView {
-            List {
-                BlogCardView(title: "Diary of a Wimpy Kid", description: "The series follows Greg Heffley, a middle-schooler who illustrates his daily life in a diary. Kinney spent eight years working on the book before showing it to a publisher")
-                    .listRowSeparator(.hidden)
-                BlogCardView(title: "Diary of a Wimpy Kid", description: "The series follows Greg Heffley, a middle-schooler who illustrates his daily life in a diary. Kinney spent eight years working on the book before showing it to a publisher")
-                    .listRowSeparator(.hidden)
-                BlogCardView(title: "Diary of a Wimpy Kid", description: "The series follows Greg Heffley, a middle-schooler who illustrates his daily life in a diary. Kinney spent eight years working on the book before showing it to a publisher")
-                    .listRowSeparator(.hidden)
+            List(SampleData.getSampleBlogs()) { blog in
+                BlogCardView(
+                    title: blog.title,
+                    description: blog.description
+                )
+                .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-            .navigationTitle("Home")
+            .navigationTitle("Jk Rowling's blogs")
             .toolbar {
-                ToolbarItem(id: "plus", placement: .navigationBarTrailing, showsByDefault: true) {
-                    Button {
-                        // TODO
-                    } label: {
-                        Image(systemName: "plus")
+                ToolbarItem(
+                    id: "plus",
+                    placement: .navigationBarTrailing,
+                    showsByDefault: true) {
+                        Button {
+                            
+                        } label: {
+                            Image("edit_square")
+                        }.tint(.black)
                     }
-                }
             }
         }
         
